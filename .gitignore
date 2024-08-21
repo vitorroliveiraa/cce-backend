@@ -1,0 +1,29 @@
+# Arquivos de configuração
+.vscode/
+.env
+
+# Arquivos de saída do VS Code
+.vscode/
+
+# Dependências
+node_modules/
+
+# Arquivos gerados pela compilação TypeScript
+/dist/
+
+# Arquivos de log
+logs/
+*.log
+
+# Arquivos temporários
+*.tmp
+
+# Cache do npm
+npm-debug.log
+npm-debug.log.*
+
+# Arquivos de build do TypeScript
+*.tsbuildinfo
+
+# Arquivos de cobertura
+coverage/

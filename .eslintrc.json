@@ -1,0 +1,39 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+        "plugin:prettier/recommended",
+        "prettier",
+        "eslint:recommended"
+    ],
+    "plugins": [
+        "@typescript-eslint",
+        "import"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 2020,
+        "sourceType": "commonjs",
+        "project": "tsconfig.json"
+    },
+    "env": {
+        "es6": true,
+        "node": true
+    },
+    "rules": {
+        "no-var": "error",
+        "semi": "error",
+        "indent": [
+            "error",
+            2,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "no-multi-spaces": "error",
+        "space-in-parens": "error",
+        "no-multiple-empty-lines": "error",
+        // "import/no-unresolved": "error",
+        "no-unused-vars": "off",
+        "import/newline-after-import": ["error", { "count": 1 }]
+        //   'prefer-const': 'error',
+    }
+}
