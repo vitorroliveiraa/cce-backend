@@ -12,7 +12,7 @@
     "postinstall": "husky install",
     "prepare": "husky",
     "migrate:make": "npx knex migrate:make $1 --knexfile ./src/database/knexfile.ts",
-    "migrate:latest": "npx knex migrate:latest"
+    "migrate:latest": "npx knex --knexfile ./src/database/knexfile.ts migrate:latest"
   },
   "keywords": [],
   "author": "",
