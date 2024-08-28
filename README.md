@@ -23,6 +23,7 @@ Install
         .prettierrc.js
 
 Referencias:
+https://caniuse.com/?search=ECMAScript%202017
 https://gist.github.com/silver-xu/1dcceaa14c4f0253d9637d4811948437
 https://blog.tericcabrel.com/set-up-a-nodejs-project-with-typescript-eslint-and-prettier/
 https://randomzed.medium.com/configure-eslint-prettier-for-a-typescript-project-node-js-79b9f417d2cd

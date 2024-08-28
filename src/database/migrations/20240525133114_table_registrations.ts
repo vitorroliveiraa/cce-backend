@@ -1,5 +1,5 @@
 import type { Knex } from 'knex';
-import { ETableNames } from '../ETableNames.ts';
+import { ETableNames } from '../../types/enums.ts';
 
 export async function up(knex: Knex): Promise<void> {
   return knex.schema

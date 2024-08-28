@@ -1,8 +1,12 @@
 import dotenv from 'dotenv';
 import { Knex } from 'knex';
-import { resolve } from 'path';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-const dotenvFilepath = resolve(__dirname, '..', '..', '.env');
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = dirname(__filename);
+
+const dotenvFilepath = path.resolve(__dirname, '..', '..', '.env');
 dotenv.config({ path: dotenvFilepath });
 
 interface KnexConfig {
@@ -29,7 +33,12 @@ const knexConfig: KnexConfig = {
     migrations: {
       tableName: 'knex_migrations',
       extension: 'ts',
-      directory: resolve(__dirname, 'migrations'),
+      directory: path.resolve(__dirname, 'migrations'),
+    },
+    seeds: {
+      // directory: path.resolve(__dirname, '..', 'src', 'database', 'seeds'),
+      directory: './src/database/seeds',
+      extension: 'ts',
     },
   },
 
