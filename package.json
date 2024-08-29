@@ -11,10 +11,11 @@
     "format": "eslint src/**/*.ts --fix",
     "postinstall": "husky install",
     "prepare": "husky",
-    "knex": "tsx ./node_modules/.bin/knex",
-    "migrate:make": "npx knex migrate:make $1 --knexfile ./src/database/knexfile.ts",
-    "migrate:latest": "npx knex --knexfile ./src/database/knexfile.ts migrate:latest",
-    "knex:seed": "knex --knexfile ./src/database/knexfile.ts seed:run"
+    "knex": "tsx -r sucrase/register ./node_modules/knex/bin/cli.js",
+    "migrate:make": "npm run knex -- migrate:make $1 --knexfile ./src/database/knexfile.ts",
+    "migrate:latest": "npm run knex -- migrate:latest --knexfile ./src/database/knexfile.ts",
+    "seed:make": "npm run knex -- seed:make $1 --knexfile ./src/database/knexfile.ts",
+    "knex:seed": "npm run knex -- seed:run --knexfile ./src/database/knexfile.ts"
   },
   "type": "module",
   "keywords": [],
@@ -39,6 +40,7 @@
     "eslint-plugin-promise": "^6.1.1",
     "husky": "^9.0.11",
     "prettier": "^3.2.5",
+    "sucrase": "^3.35.0",
     "tsup": "^8.0.2",
     "tsx": "^4.9.0",
     "typescript": "^5.4.5"

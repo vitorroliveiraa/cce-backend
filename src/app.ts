@@ -3,6 +3,11 @@ import cors from 'cors';
 
 import routes from './shared/routes/index.ts';
 import { errorMiddleware } from './shared/middlewares/error.ts';
+import path from 'path';
+import dotenv from 'dotenv';
+
+const dotenvFilepath = path.resolve(process.cwd(), '.env');
+dotenv.config({ path: dotenvFilepath });
 
 const app = express();
 

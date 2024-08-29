@@ -1,13 +1,6 @@
 import dotenv from 'dotenv';
 import { Knex } from 'knex';
 import path from 'path';
-import { fileURLToPath } from 'url';
-
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = dirname(__filename);
-
-const dotenvFilepath = path.resolve(__dirname, '..', '..', '.env');
-dotenv.config({ path: dotenvFilepath });
 
 interface KnexConfig {
   [key: string]: Knex.Config;
@@ -33,46 +26,14 @@ const knexConfig: KnexConfig = {
     migrations: {
       tableName: 'knex_migrations',
       extension: 'ts',
-      directory: path.resolve(__dirname, 'migrations'),
+      directory: path.join(process.cwd(), 'migrations'),
     },
     seeds: {
-      // directory: path.resolve(__dirname, '..', 'src', 'database', 'seeds'),
-      directory: './src/database/seeds',
+      directory: path.join(process.cwd(), 'seeds'),
       extension: 'ts',
+      timestampFilenamePrefix: true,
     },
   },
-
-  // staging: {
-  //   client: 'postgresql',
-  //   connection: {
-  //     database: 'my_db',
-  //     user: 'username',
-  //     password: 'password',
-  //   },
-  //   pool: {
-  //     min: 2,
-  //     max: 10,
-  //   },
-  //   migrations: {
-  //     tableName: 'knex_migrations',
-  //   },
-  // },
-
-  // production: {
-  //   client: 'postgresql',
-  //   connection: {
-  //     database: 'my_db',
-  //     user: 'username',
-  //     password: 'password',
-  //   },
-  //   pool: {
-  //     min: 2,
-  //     max: 10,
-  //   },
-  //   migrations: {
-  //     tableName: 'knex_migrations',
-  //   },
-  // },
 };
 
 export default knexConfig;
